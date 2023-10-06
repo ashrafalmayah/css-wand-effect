@@ -1,0 +1,123 @@
+/* Basic Reset */
+*{ 
+    margin: 0;
+    padding: 0;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+input, textarea, button, select{
+    font: inherit;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    min-height: 100vh;
+}
+/* End of Basic Reset */
+
+body{
+    background-color: #090f1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+body > h1{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    body > h1{
+        display: none;
+    }
+}
+
+.images-container{
+    position: relative;
+    width: 60vw;
+    aspect-ratio: 16/9;
+    background-color: #080b18;
+    overflow: hidden;
+}
+
+#wand{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%);
+    z-index: 100;
+    box-shadow: 0px 0px 10px black;
+    width: 5%;
+    aspect-ratio: 1/10;
+    background: linear-gradient(
+        to right,
+        #1d1d1d 10%,
+        #303030 45% 55%,
+        #1d1d1d 90%
+    );
+    overflow: hidden;
+    border-radius: 10px;
+}
+.cap{
+    height: 20%;
+    background: linear-gradient(
+        to right,
+        #9a9a9a 10%,
+        #ffffff 45% 55%,
+        #9a9a9a 90%
+    );
+}
+
+.tile{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    width: 20%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: #313b44;
+    box-shadow: inset 0px 0px 5px #5e666d;
+}
+
+.tile i{
+    font-size: 5rem;
+    color: #3c444b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tile:nth-child(1){
+    transform: translate(-130%, -50%)
+                rotate(5deg);
+}
+.tile:nth-child(2){
+    transform: translate(-50%, -50%)
+                rotate(-5deg);
+}
+.tile:nth-child(3){
+    transform: translate(30%, -50%)
+                rotate(10deg);
+}
+            
+.tile > .image, .tile > img{
+    width: 100%;
+    height: 100%;
+    opacity: var(--opacity);
+    filter: blur(calc(var(--blur) * 10px));
+    background: linear-gradient( 60deg ,#023fe8,#a72539);
+    object-fit: cover;
+}
