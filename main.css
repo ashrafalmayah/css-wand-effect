@@ -21,7 +21,8 @@ body{
 }
 /* End of Basic Reset */
 
-body{
+main{
+    height: 100vh;
     background-color: #090f1e;
     display: flex;
     flex-direction: column;
@@ -29,14 +30,6 @@ body{
     align-items: center;
     font-family: sans-serif;
 }
-
-body > h1{
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 50px;
-}
-
 
 .images-container{
     position: relative;
