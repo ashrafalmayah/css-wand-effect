@@ -37,11 +37,6 @@ body > h1{
     margin-bottom: 50px;
 }
 
-@media screen and (min-width: 768px) {
-    body > h1{
-        display: none;
-    }
-}
 
 .images-container{
     position: relative;
@@ -120,4 +115,16 @@ body > h1{
     filter: blur(calc(var(--blur) * 10px));
     background: linear-gradient( 60deg ,#023fe8,#a72539);
     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .images-container{
+        width: 90vw;
+    }
+    .tile{
+        border-radius: 15px;
+    }
+    .tile i{
+        font-size: 2rem;
+    }
 }

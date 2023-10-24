@@ -2,14 +2,15 @@ const wand = document.getElementById('wand');
 const imagesContianer = document.querySelector('.images-container');
 const tiles = document.querySelectorAll('.tile');
 
-window.onmousemove = e => {
-    console.log(imagesContianer.getBoundingClientRect().x);
-    let mouseX = e.clientX - imagesContianer.getBoundingClientRect().x;
-    let mouseY = e.clientY - imagesContianer.getBoundingClientRect().y;
-    imagesContianerWidth = imagesContianer.getBoundingClientRect().width;
-    imagesContianerHeight = imagesContianer.getBoundingClientRect().height;
+window.onmousemove = (e) => handleWandMove(e);
+window.ontouchmove = (e) => handleWandMove(e);
+function handleWandMove(e) {
+    const mouseX = e.clientX - imagesContianer.getBoundingClientRect().x;
+    const mouseY = e.clientY - imagesContianer.getBoundingClientRect().y;
+    const imagesContianerWidth = imagesContianer.getBoundingClientRect().width;
+    const imagesContianerHeight = imagesContianer.getBoundingClientRect().height;
 
-    mouseXPercentage = mouseX / imagesContianerWidth;
+    const mouseXPercentage = mouseX / imagesContianerWidth;
 
     const wandX = (imagesContianerWidth * -0.15) + mouseX * 1.3;
     const wandY = (imagesContianerHeight * 0.1) + (mouseY * 0.4);
