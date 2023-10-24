@@ -2,8 +2,21 @@ const wand = document.getElementById('wand');
 const imagesContianer = document.querySelector('.images-container');
 const tiles = document.querySelectorAll('.tile');
 
+window.ontouchmove = (e) => {
+    // Prevent any default touchmove behavior
+    e.preventDefault();
+    console.log(e);
+    // Get the list of touches
+    let touches = e.touches;
+    
+    // Iterate through the touches
+    for (let i = 0; i < touches.length; i++) {
+        let touch = touches[i];
+        handleWandMove(touch);
+    }
+}
+
 window.onmousemove = (e) => handleWandMove(e);
-window.ontouchmove = (e) => handleWandMove(e);
 function handleWandMove(e) {
     const mouseX = e.clientX - imagesContianer.getBoundingClientRect().x;
     const mouseY = e.clientY - imagesContianer.getBoundingClientRect().y;
